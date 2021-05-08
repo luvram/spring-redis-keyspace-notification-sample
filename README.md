@@ -19,7 +19,7 @@ Redis 의 Keyspace Notification 은 CPU 리소스를 약간 잡아먹기 때문�
 1. `redis.conf` 에서 `notify-keyspace-events` 설정
 2. `config set notify-keyspace-events 값` 으로 명령 실행
     
-이 프로젝트에서는 
+이 프로젝트에서는 docker-compose 의 command 를 이용하여 설정하였다.
 
 ## API 설명
 - Key 생성 및 TTL 세팅
