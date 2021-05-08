@@ -3,6 +3,24 @@
 ## 목적
 Redis 의 Keyspace Notification 을 이용하여 지정된 Redis 키가 TTL에 의해 만료되었을때의 이벤트를 받아 처리할 수 있는 기능을 샘플로 만들어본다.
 
+## Required
+- Docker
+- Docker Compose
+
+## 실행
+```shell
+docker-compose -f docker-compose.yml up -d
+./gradlew clean build
+java -jar build/libs/keyspacenotification-0.0.1-SNAPSHOT.jar   
+```
+
+## Redis 설정
+Redis 의 Keyspace Notification 은 CPU 리소스를 약간 잡아먹기 때문에 기본적으로 기능이 off 되어있다. 따라서 다음중 한가지 활성화 할 수 있다. ( 자세한 설정 정보는 [링크](https://redis.io/topics/notifications) 의 `Configuration` 섹션을 참조하도록 한다. )
+1. `redis.conf` 에서 `notify-keyspace-events` 설정
+2. `config set notify-keyspace-events 값` 으로 명령 실행
+    
+이 프로젝트에서는 
+
 ## API 설명
 - Key 생성 및 TTL 세팅
     ```text
