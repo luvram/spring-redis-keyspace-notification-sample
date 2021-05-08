@@ -20,6 +20,4 @@ class SampleController(
     fun getTTL(@PathVariable keyName: String): Long? {
         return sampleService.leftTime(keyName)
     }
-
-
 }

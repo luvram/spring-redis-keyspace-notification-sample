@@ -10,6 +10,4 @@ class ExpirationListener: MessageListener {
         val key: String = String(message.getBody())
         println("expired key: ${key}")
     }
-
-
 }
