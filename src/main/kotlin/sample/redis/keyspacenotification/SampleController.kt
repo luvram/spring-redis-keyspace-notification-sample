@@ -20,4 +20,8 @@ class SampleController(
     fun getTTL(@PathVariable keyName: String): Long? {
         return sampleService.leftTime(keyName)
     }
+    @PostMapping("/bulk")
+    fun createBulkTtl() {
+        return sampleService.createBulk()
+    }
 }

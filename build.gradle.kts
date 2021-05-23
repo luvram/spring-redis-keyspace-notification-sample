@@ -23,6 +23,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("it.ozimov:embedded-redis:0.7.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
