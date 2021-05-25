@@ -17,7 +17,7 @@ class SampleService(
 ) {
     companion object {
         private val log = LoggerFactory.getLogger(this.javaClass)
-        private const val MAX_KEY_ALIVE_TIME = 10L
+        private const val MAX_KEY_ALIVE_TIME = 5L
         private val MAX_KEY_ALIVE_TIMEUNIT = TimeUnit.SECONDS
     }
 
@@ -26,6 +26,8 @@ class SampleService(
             connection.multi()
             connection.set(keyName.toByteArray(), keyName.toByteArray())
             connection.expire(keyName.toByteArray(), MAX_KEY_ALIVE_TIME)
+            val keyData = "${keyName}:data"
+            connection.set(keyData.toByteArray(), keyData.toByteArray())
             connection.exec()
         }
     }

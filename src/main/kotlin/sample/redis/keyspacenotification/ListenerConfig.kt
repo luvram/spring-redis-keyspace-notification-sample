@@ -1,5 +1,9 @@
 package sample.redis.keyspacenotification
 
+import org.redisson.Redisson
+import org.redisson.api.RMapCache
+import org.redisson.api.RedissonClient
+import org.redisson.config.Config
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.connection.RedisConnectionFactory
@@ -26,5 +30,13 @@ class ListenerConfig {
             )
         }
         return listenerContainer
+    }
+
+    @Bean
+    fun redissonClient(): RedissonClient {
+        val config = Config().apply {
+            this.useSingleServer().address = "redis://localhost:6379"
+        }
+        return Redisson.create(config)
     }
 }
